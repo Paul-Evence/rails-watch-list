@@ -1,0 +1,21 @@
+<div class="banner">
+  <div class="container">
+    <h1>My Movie list</h1>
+  </div>
+</div>
+
+<div class="container">
+      <% @lists.each do |list| %>
+  <div class="card-container">
+    <%= image_tag "movie2.jpeg", width: 50  %>
+
+        <h4> <%= link_to list.name, list_path(list)%></h4>
+  </div>
+      <% end %>
+</div>
+
+<div class="container">
+<p> </p>
+<p> </p>
+<%= link_to "New List", new_list_path, class: "btn btn-flat"%>
+</div>

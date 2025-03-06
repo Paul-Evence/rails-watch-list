@@ -1,0 +1,29 @@
+<div class="container">
+<h2><%= @list.name %></h2>
+<p>This list has the following Movies :</p>
+</div>
+
+<ul>
+  <% @list.movies.each do |movie| %>
+  <div class="card-product">
+    <%= image_tag movie.poster_url, width: 50  %>
+      <h2><%= movie.title %></h2>
+      <p><%= movie.overview %></p>
+      <p><strong>Movie rating : </strong> <%= movie.rating%></p>
+      <p><%=  %></p>
+        <div class:"btn btn-flat">
+          <%= link_to "Delete bookmark", bookmark_path(@list),
+            data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure?"
+            } %>
+        </div>
+   </div>
+  <% end %>
+</ul>
+
+<h3>Add a movie to the list :</h3>
+
+<%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-flat"%>
+
+<%= link_to "List page", lists_path, class: "btn btn-flat"%>

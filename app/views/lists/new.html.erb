@@ -1,0 +1,15 @@
+<div class="banner">
+  <div class="container">
+    <h1>Create a new List</h1>
+  </div>
+</div>
+
+
+
+<%= simple_form_for(@list) do |f| %>
+<%= f.input :name %>
+<%= f.submit%>
+<% end %>
+
+
+<%= link_to "List page", lists_path, class: "btn btn-flat"%>
