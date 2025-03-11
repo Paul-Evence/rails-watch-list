@@ -12,7 +12,7 @@
       <p><strong>Movie rating : </strong> <%= movie.rating%></p>
       <p><%=  %></p>
         <div class:"btn btn-flat">
-          <%= link_to "Delete bookmark", bookmark_path(@list),
+          <%= link_to "Delete bookmark", list_path(@list),
             data: {
               turbo_method: :delete,
               turbo_confirm: "Are you sure?"
